@@ -2,7 +2,7 @@ class Application
 
   def call(env)
     resp = Rack::Response.new
-    time=Time.now
+    time=Time.local
     zone=time.zone
     resp.write "#{zone}"
     if time.hour<12
