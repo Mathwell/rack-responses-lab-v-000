@@ -3,7 +3,7 @@ class Application
   def call(env)
     resp = Rack::Response.new
     time=Time.now
-    time.zone="UTC"
+    zone=time.zone
     resp.write "#{zone}"
     if time.hour<12
       resp.write "Good Morning! Time now: #{time}"
